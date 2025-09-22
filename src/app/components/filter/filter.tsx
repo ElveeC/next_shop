@@ -6,7 +6,7 @@ import styles from "./filter.module.css";
 type FilterProps = {
   activeBrand: string;
   className?: string;
-  onBrandChange: (brand: BrandFilter) => void;
+  onBrandChange: (brand: string) => void;
 }
 
 const Filter: FC<FilterProps> = ({ className, activeBrand, onBrandChange }: FilterProps) => {
@@ -17,23 +17,24 @@ const Filter: FC<FilterProps> = ({ className, activeBrand, onBrandChange }: Filt
         <legend className={styles.legend}>Бренд</legend>
         <Radio
           name="brand"
-          id="all"
+          id={BrandFilter.All}
           label="All"
-          isChecked={activeBrand === "all"}
-          onChange={(evt) => onBrandChange(evt.target.id as BrandFilter)}
+          isChecked={activeBrand === BrandFilter.All}
+          onChange={(evt) => onBrandChange(evt.target.id)}
         />
         <Radio
           name="brand"
-          id="head" label="Head"
-          isChecked={activeBrand === "head"}
-          onChange={(evt) => onBrandChange(evt.target.id as BrandFilter)}
+          id={BrandFilter.Head}
+          label="Head"
+          isChecked={activeBrand === BrandFilter.Head}
+          onChange={(evt) => onBrandChange(evt.target.id)}
         />
         <Radio
           name="brand"
-          id="yonex"
+          id={BrandFilter.Yonex}
           label="Yonex"
-          isChecked={activeBrand === "yonex"}
-          onChange={(evt) => onBrandChange(evt.target.id as BrandFilter)}
+          isChecked={activeBrand === BrandFilter.Yonex}
+          onChange={(evt) => onBrandChange(evt.target.id)}
         />
       </fieldset>
     </form>

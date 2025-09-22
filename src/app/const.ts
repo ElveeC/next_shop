@@ -12,5 +12,5 @@ export enum Page {
 export enum BrandFilter {
   All = "all",
   Head = "head",
-  Yonex = "yonnex"
+  Yonex = "yonex"
 }

@@ -8,9 +8,9 @@ import { rackets } from "../data/mock";
 import styles from "./rackets.module.css";
 
 const RacketPage: FC = () => {
-  const [activeBrand, setActiveBrand] = useState(BrandFilter.All);
+  const [activeBrand, setActiveBrand] = useState<string>(BrandFilter.All);
 
-  const handleBrandChange = (brand: BrandFilter) => {
+  const handleBrandChange = (brand: string) => {
     setActiveBrand(brand);
   }
 
