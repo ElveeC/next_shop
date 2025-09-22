@@ -6,6 +6,10 @@ type RacketPageProps = {
   params: Promise<{ id: string }>;
 };
 
+export const generateStaticParams = () => {
+    return [{id: '1'}, {id: '2'}, {id: '3'}]
+}
+
 const RacketPage: FC<RacketPageProps> = async ({ params }) => {
 
   const { id } = await params;
