@@ -1,14 +1,9 @@
-"use client";
-
 import { FC } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { AppRoute, Page } from "@/app/const";
+import NavLink from "@/app/ui/navLink/navLink";
 import styles from "./header.module.css";
-import cn from "classnames";
 
 const Header: FC = () => {
-
-  const pathName = usePathname();
 
   return (
     <header className={styles.header}>
@@ -16,18 +11,10 @@ const Header: FC = () => {
       <nav className={styles.nav}>
         <ul className={styles.list}>
           <li className={styles.item}>
-            {pathName === "/" ?
-              <p className={cn(styles.link, styles['link--active'])} >Главная</p>
-              :
-              <Link className={styles.link} href="/">Главная</Link>
-            }
+            <NavLink text={Page.HomePage} route={AppRoute.HomePage} />
           </li>
           <li className={styles.item}>
-            {pathName === "/rackets" ?
-              <p className={cn(styles.link, styles['link--active'])} >Ракетки</p>
-              :
-              <Link className={styles.link} href="/rackets">Ракетки</Link>
-            }
+            <NavLink text={Page.Rackets} route={AppRoute.Rackets} />
           </li>
         </ul>
       </nav>
