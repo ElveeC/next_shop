@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+  border-bottom: 1px solid #999999;
+}
+
+.title {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  aspect-ratio: 360/440;
+  object-fit: contain;
+}
+
+.link--active {
+  color: #ff4b41;
+}

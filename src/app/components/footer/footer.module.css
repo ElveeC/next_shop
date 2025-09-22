@@ -1,0 +1,15 @@
+.footer {
+  border-top: 1px solid #999999;
+}
+
+.logo {
+  padding: 40px 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #838282;
+}
+
+.copyright {
+  padding: 40px 0;
+}
