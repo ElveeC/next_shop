@@ -10,15 +10,15 @@ import styles from "./rackets.module.css";
 const RacketPage: FC = () => {
   const [activeBrand, setActiveBrand] = useState<string>(BrandFilter.All);
 
-  const handleBrandChange = (brand: string) => {
-    setActiveBrand(brand);
-  }
-
-  const racketsToShow = activeBrand === BrandFilter.All ? rackets.slice() : rackets.filter((racket) => racket.brand.name.toLowerCase() === activeBrand);
+  const racketsToShow = activeBrand === BrandFilter.All ? rackets : rackets.filter((racket) => racket.brand.name.toLowerCase() === activeBrand);
 
   return (
     <div className={styles.wrapper}>
-      <Filter className={styles.filter} activeBrand={activeBrand} onBrandChange={handleBrandChange} />
+      <Filter
+        className={styles.filter}
+        activeBrand={activeBrand}
+        onBrandChange={(brand: string) => setActiveBrand(brand)}
+      />
       <section className={styles[`list-wrapper`]}>
         <h2 className={styles.title}>Ракетки</h2>
         <RacketList rackets={racketsToShow} />
