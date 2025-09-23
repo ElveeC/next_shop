@@ -1,5 +1,5 @@
 import { FC } from "react";
-import RacketItem from "../racketItem/racketItem";
+import RacketListItem from "../racketListItem/racketListItem";
 import RacketType from "@/app/types/racketType";
 import cn from "classnames";
 import styles from "./racketList.module.css";
@@ -13,7 +13,7 @@ const RacketList: FC<RacketListProps> = ({ rackets, className }) => {
   return (
     <ul className={cn(styles.list, className)}>
       {rackets.map((racket) => (
-        <RacketItem
+        <RacketListItem
           key={racket.id}
           id={racket.id}
           name={racket.name}

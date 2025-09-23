@@ -1,15 +1,15 @@
 import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./racketItem.module.css";
+import styles from "./racketListItem.module.css";
 
-type RacketItemProps = {
+type RacketListItemProps = {
   id: number;
   name: string;
   imageUrl: string;
 }
 
-const RacketItem: FC<RacketItemProps> = ({ id, name, imageUrl }) => {
+const RacketListItem: FC<RacketListItemProps> = ({ id, name, imageUrl }) => {
   return (
     <li className={styles.item}>
       <Link className={styles.link} href={`/racket/${id}`}>
@@ -26,4 +26,4 @@ const RacketItem: FC<RacketItemProps> = ({ id, name, imageUrl }) => {
   );
 }
 
-export default RacketItem;
+export default RacketListItem;
