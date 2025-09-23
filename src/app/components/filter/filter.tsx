@@ -11,31 +11,33 @@ type FilterProps = {
 
 const Filter: FC<FilterProps> = ({ className, activeBrand, onBrandChange }: FilterProps) => {
 
+  const brandChoiceButtons = [
+    {
+      id: BrandFilter.All,
+      label: "All"
+    },
+    {
+      id: BrandFilter.Head,
+      label: "Head"
+    },
+    {
+      id: BrandFilter.Yonex,
+      label: "Yonex"
+    },
+  ];
+
   return (
     <form className={className}>
       <fieldset className={styles.wrapper}>
         <legend className={styles.legend}>Бренд</legend>
-        <Radio
+        {brandChoiceButtons.map((button) => <Radio
+          key={button.id}
           name="brand"
-          id={BrandFilter.All}
-          label="All"
-          isChecked={activeBrand === BrandFilter.All}
+          id={button.id}
+          label={button.label}
+          isChecked={activeBrand === button.id}
           onChange={(evt) => onBrandChange(evt.target.id)}
-        />
-        <Radio
-          name="brand"
-          id={BrandFilter.Head}
-          label="Head"
-          isChecked={activeBrand === BrandFilter.Head}
-          onChange={(evt) => onBrandChange(evt.target.id)}
-        />
-        <Radio
-          name="brand"
-          id={BrandFilter.Yonex}
-          label="Yonex"
-          isChecked={activeBrand === BrandFilter.Yonex}
-          onChange={(evt) => onBrandChange(evt.target.id)}
-        />
+        />)}
       </fieldset>
     </form>
   );
