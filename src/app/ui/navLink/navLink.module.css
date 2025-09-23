@@ -1,0 +1,4 @@
+.link--current {
+  color: #ff4b41;
+  pointer-events: none;
+}

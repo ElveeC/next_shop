@@ -1,0 +1,32 @@
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 40px 0;
+  gap: 40px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.img {
+  max-width: 100%;
+  aspect-ratio: 360/440;
+  object-fit: contain;
+}
+
+.brand {
+  font-weight: 700;
+  color: #838282;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+}

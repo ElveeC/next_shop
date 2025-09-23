@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.link {
+  color: #922c27;
+}

@@ -1,0 +1,22 @@
+.item {
+  padding: 5px;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  padding: 10px;
+  text-align: center;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  aspect-ratio: 360/440;
+  object-fit: contain;
+}
