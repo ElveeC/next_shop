@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./racketListItem.module.css";
+import styles from "./racket-list-item.module.css";
 
 type RacketListItemProps = {
   id: number;

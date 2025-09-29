@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { AppRoute, Page } from "@/app/const";
-import NavLink from "@/app/ui/navLink/navLink";
+import { AppRoute, Page } from "@/const/const";
+import NavLink from "@/ui/nav-link/nav-link";
 import styles from "./header.module.css";
 
 const Header: FC = () => {

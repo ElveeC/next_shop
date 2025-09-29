@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.filter {
+  margin-right: auto;
+}
+
+.list-wrapper {
+  margin-right: auto;
+}
+
+.title {
+  margin-bottom: 20px;
+}

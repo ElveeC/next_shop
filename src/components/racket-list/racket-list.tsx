@@ -1,8 +1,9 @@
 import { FC } from "react";
-import RacketListItem from "../racketListItem/racketListItem";
-import RacketType from "@/app/types/racketType";
+import RacketListItem from "../racket-list-item/racket-list-item";
+import RacketType from "@/types/racket-type";
+
 import cn from "classnames";
-import styles from "./racketList.module.css";
+import styles from "./racket-list.module.css";
 
 type RacketListProps = {
   rackets: RacketType[];

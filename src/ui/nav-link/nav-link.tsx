@@ -3,7 +3,7 @@
 import { FC } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from "./navLink.module.css";
+import styles from "./nav-link.module.css";
 import cn from "classnames";
 
 type NavLinkProps = {
