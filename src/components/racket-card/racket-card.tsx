@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-import styles from "./racketCard.module.css";
+import styles from "./racket-card.module.css";
 
 type RacketCardProps = {
   name: string;

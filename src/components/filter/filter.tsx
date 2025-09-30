@@ -1,6 +1,6 @@
 import { FC } from "react";
-import Radio from "@/app/ui/radio/radio";
-import { BrandFilter } from "@/app/const";
+import Radio from "@/ui/radio/radio";
+import { BrandFilter } from "@/const/const";
 import styles from "./filter.module.css";
 
 type FilterProps = {
