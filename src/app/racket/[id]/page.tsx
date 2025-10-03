@@ -1,11 +1,30 @@
 import { FC } from "react";
 import RacketCard from "@/components/racket-card/racket-card";
 import { getRacketById } from "@/app/services/get-racket-by-id";
+import { getMetaRacketById } from "@/app/services/get-meta-racket-by-id";
 import { notFound } from "next/navigation";
 
 type RacketPageProps = {
   params: Promise<{ id: string }>;
 };
+
+export const generateMetadata = async ({ params }: RacketPageProps) => {
+  const { id } = await params;
+  const { data: metaData, isError: isMetaDataError } = await getMetaRacketById({ id });
+  
+  if (!metaData || isMetaDataError) {
+
+    return {
+      title: "Racket"
+    };
+  }
+
+  return {
+    title: metaData.name,
+    description: metaData.description,
+  };
+}
+
 
 const RacketPage: FC<RacketPageProps> = async ({ params }) => {
 
