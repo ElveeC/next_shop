@@ -1,8 +1,13 @@
 import { FC } from "react";
+import { Metadata } from "next";
 import RacketsContainer from "@/components/rackets-container/rackets-container";
 import { getTop10Rackets } from "@/app/services/get-top-10-rackets";
 import { notFound } from "next/navigation";
 import styles from "./top-10.module.css";
+
+ export const metadata: Metadata = {
+  title: "Top-10 rackets",
+};
 
 const Top10: FC = async () => {
 
