@@ -2,7 +2,11 @@ import RacketType from "@/types/racket-type";
 import ResponseType from "@/types/response-type";
 
 export const getTop10Rackets = async (): Promise<ResponseType<RacketType[]>> => {
-  const result = await fetch(`http://localhost:4000/api/top-10`);
+  const result = await fetch(`http://localhost:4000/api/top-10`, {
+    next: {
+      tags: ["getTop10Rackets"],
+    }
+  });
 
   if (!result.ok) {
     return { isError: true, data: undefined };

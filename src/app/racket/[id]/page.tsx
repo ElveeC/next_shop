@@ -1,6 +1,5 @@
-import { FC } from "react";
-import RacketCard from "@/components/racket-card/racket-card";
-import { getRacketById } from "@/app/services/get-racket-by-id";
+import { FC, Suspense } from "react";
+import RacketContainer from "@/components/racket-card/racket-container";
 import { getMetaRacketById } from "@/app/services/get-meta-racket-by-id";
 import { notFound } from "next/navigation";
 
@@ -11,7 +10,7 @@ type RacketPageProps = {
 export const generateMetadata = async ({ params }: RacketPageProps) => {
   const { id } = await params;
   const { data: metaData, isError: isMetaDataError } = await getMetaRacketById({ id });
-  
+
   if (!metaData || isMetaDataError) {
 
     return {
@@ -30,7 +29,7 @@ const RacketPage: FC<RacketPageProps> = async ({ params }) => {
 
   const { id } = await params;
 
-  const { data: racketActive, isError } = await getRacketById({ id });
+  const { data: racketActive, isError } = await getMetaRacketById({ id });
 
   if (isError) {
     return <div>Error...</div>
@@ -41,15 +40,9 @@ const RacketPage: FC<RacketPageProps> = async ({ params }) => {
   }
 
   return (
-    <div>
-      <RacketCard
-        name={racketActive.name}
-        brandName={racketActive.brand.name}
-        imageUrl={racketActive.imageUrl}
-        price={racketActive.price}
-        description={racketActive.description}
-      />
-    </div>
+    <Suspense fallback={<div>Loading racket info...</div>}>
+      <RacketContainer id={id} />
+    </Suspense>
   );
 };
 
