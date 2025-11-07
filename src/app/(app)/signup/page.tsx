@@ -1,14 +1,12 @@
 "use client";
 
 import { useActionState, useEffect } from "react";
-import { loginAction } from "./login-action";
-import Link from "next/link";
-import { AppRoute } from "@/const/const";
+import { signupAction } from "./signup-action";
 
 
-const Login = () => {
+const Signup = () => {
 
-  const [{ error, redirectTo }, formAction, isPending] = useActionState(loginAction, { error: "" });
+  const [ {error, redirectTo}, formAction, isPending] = useActionState(signupAction, {error: ""});
 
   useEffect(() => {
     if (redirectTo) {
@@ -19,24 +17,17 @@ const Login = () => {
   return (
     <form action={formAction}>
       <div>
-        <label htmlFor="login">Login</label>
+        <label htmlFor="login">Зарегистрироваться</label>
         <input name="login" type="text" placeholder="Enter your login" required />
       </div>
-      <div>
+         <div>
         <label htmlFor="password">Password</label>
         <input name="password" type="password" placeholder="Enter your password" required />
       </div>
-      {
-        error
-        &&
-        <div>
-          <p>{error}</p>
-          <p>Enter valid data or <Link href={AppRoute.Signup}>sign up</Link></p>
-        </div>
-      }
+      {error && <div>{error}</div>}
       <button disabled={isPending} type="submit">Submit</button>
     </form>
   );
 };
 
-export default Login;
+export default Signup;

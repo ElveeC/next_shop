@@ -5,11 +5,11 @@ import { parseSetCookie } from "@/helpers/parse-set-cookie";
 import { cookies } from "next/headers";
 import { LoginState } from "@/types/login-type";
 
-export const loginAction = async (_: LoginState, formData: FormData) => {
+export const signupAction = async (_: LoginState, formData: FormData) => {
   const login = formData.get("login")?.toString() || "";
   const password = formData.get("password")?.toString() || "";
 
-  const result = await fetch(`${BASE_API_URL}/auth/login`, {
+  const result = await fetch(`${BASE_API_URL}/auth/signup`, {
     method: "POST",
     body: JSON.stringify({
       login,
@@ -19,7 +19,7 @@ export const loginAction = async (_: LoginState, formData: FormData) => {
   });
 
   if (result.status !== 200) {
-    return { error: "Invalid login or password" };
+    return { error: "User exists" };
   }
 
   const cookiesStore = await cookies();

@@ -36,11 +36,15 @@ const Header: FC = () => {
                 <LogoutButton />
               </li>
             </>
-
             :
-            <li className={styles.item}>
-              <NavLink text={Page.Login} route={AppRoute.Login} />
-            </li>
+            <>
+              <li className={styles.item}>
+                <NavLink text={Page.Login} route={AppRoute.Login} />
+              </li>
+              <li>
+                <NavLink text={Page.Signup} route={AppRoute.Signup} />
+              </li>
+            </>
           }
         </ul>
       </nav>
