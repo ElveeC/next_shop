@@ -1,9 +1,14 @@
-import { FC } from "react";
+"use client";
+
+import { FC, use } from "react";
 import { AppRoute, Page } from "@/const/const";
 import NavLink from "@/ui/nav-link/nav-link";
+import { UserContext } from "@/providers/user-provider";
 import styles from "./header.module.css";
 
 const Header: FC = () => {
+
+  const { user } = use(UserContext);
 
   return (
     <header className={styles.header}>
@@ -16,6 +21,26 @@ const Header: FC = () => {
           <li className={styles.item}>
             <NavLink text={Page.Rackets} route={AppRoute.Rackets} />
           </li>
+          <li className={styles.item}>
+            <NavLink text={Page.Top10} route={AppRoute.Top10} />
+          </li>
+
+          {user
+            ?
+            <>
+              <li>
+                {user.login}
+              </li>
+              <li className={styles.item}>
+                <NavLink text={Page.Logout} route={AppRoute.Logout} />
+              </li>
+            </>
+
+            :
+            <li className={styles.item}>
+              <NavLink text={Page.Login} route={AppRoute.Login} />
+            </li>
+          }
         </ul>
       </nav>
     </header>

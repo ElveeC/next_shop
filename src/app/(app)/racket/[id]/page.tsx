@@ -1,6 +1,6 @@
 import { FC, Suspense } from "react";
 import RacketContainer from "@/components/racket-card/racket-container";
-import { getMetaRacketById } from "@/app/services/get-meta-racket-by-id";
+import { getMetaRacketById } from "@/services/get-meta-racket-by-id";
 import { notFound } from "next/navigation";
 
 type RacketPageProps = {
