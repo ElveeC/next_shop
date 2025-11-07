@@ -4,7 +4,6 @@ export enum AppRoute {
   Rackets = "/rackets",
   Top10 = "/rackets/top-10",
   Login = "/login",
-  Logout = "/logout"
 }
 
 export enum Page {
@@ -12,7 +11,6 @@ export enum Page {
   Rackets = "Ракетки",
   Top10 = "Топ-10",
   Login = "Войти",
-  Logout = "Выйти из аккаунта"
 }
 
 export enum BrandFilter {

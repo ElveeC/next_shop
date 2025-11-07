@@ -3,6 +3,7 @@
 import { FC, use } from "react";
 import { AppRoute, Page } from "@/const/const";
 import NavLink from "@/ui/nav-link/nav-link";
+import LogoutButton from "../logout-button/logout-button";
 import { UserContext } from "@/providers/user-provider";
 import styles from "./header.module.css";
 
@@ -32,7 +33,7 @@ const Header: FC = () => {
                 {user.login}
               </li>
               <li className={styles.item}>
-                <NavLink text={Page.Logout} route={AppRoute.Logout} />
+                <LogoutButton />
               </li>
             </>
 

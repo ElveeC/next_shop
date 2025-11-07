@@ -12,7 +12,7 @@ const handleLogout = async () => {
   location.assign("/");
 };
 
-const Logout = () => {
+const LogoutButton = () => {
 
   const [ isPending, startTransition ] = useTransition();
 
@@ -23,4 +23,4 @@ const Logout = () => {
   );
 };
 
-export default Logout;
+export default LogoutButton;
