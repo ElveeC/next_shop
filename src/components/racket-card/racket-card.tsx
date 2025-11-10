@@ -1,6 +1,9 @@
-import { FC } from "react";
+"use client";
+
+import { FC, use } from "react";
 import Image from "next/image";
 import styles from "./racket-card.module.css";
+import { UserContext } from "@/providers/user-provider";
 
 type RacketCardProps = {
   name: string;
@@ -11,6 +14,7 @@ type RacketCardProps = {
 }
 
 const RacketCard: FC<RacketCardProps> = (racket: RacketCardProps) => {
+  const { isAuthorized } = use(UserContext);
   const { name, imageUrl, price, description, brandName } = racket;
 
   return (
@@ -20,6 +24,11 @@ const RacketCard: FC<RacketCardProps> = (racket: RacketCardProps) => {
         <h2>{name}</h2>
         <p className={styles.description}>{description}</p>
         <p className={styles.price}>&euro; {price}</p>
+        {
+          isAuthorized
+          &&
+          <button>В избранное</button>
+        }
       </div>
 
       <Image
@@ -28,7 +37,7 @@ const RacketCard: FC<RacketCardProps> = (racket: RacketCardProps) => {
         alt={name}
         width={540}
         height={630}
-      />      
+      />
     </article>
   );
 }
