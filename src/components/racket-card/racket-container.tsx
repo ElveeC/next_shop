@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { notFound } from "next/navigation";
 import RacketCard from "./racket-card";
-import { getRacketById } from "@/app/services/get-racket-by-id";
+import { getRacketById } from "@/services/get-racket-by-id";
 
 type RacketContainerProps = {
   id: string

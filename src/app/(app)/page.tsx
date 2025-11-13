@@ -3,8 +3,8 @@ import Link from "next/link";
 import RacketList from "@/components/racket-list/racket-list";
 import { AppRoute } from "@/const/const";
 import styles from "./page.module.css";
-import { getRackets } from "./services/get-rackets";
-import { getTop10Rackets } from "./services/get-top-10-rackets";
+import { getRackets } from "@/services/get-rackets";
+import { getTop10Rackets } from "@/services/get-top-10-rackets";
 
 
 const Page: FC = async () => {

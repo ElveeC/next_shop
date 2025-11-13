@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { FC } from "react";
-import Footer from "@/components/footer/footer";
-import Header from "@/components/header/header";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 
@@ -19,11 +17,7 @@ const RootLayout: FC<
     <html lang="en">
       <body>
         <NextTopLoader />
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
