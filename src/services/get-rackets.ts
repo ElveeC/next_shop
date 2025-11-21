@@ -21,6 +21,9 @@ export const getRackets = async ({
       headers: {
         Cookie: cookieStore.toString(),
       },
+      next: {
+        tags: ["getRackets"],
+      },
     }
   );
 

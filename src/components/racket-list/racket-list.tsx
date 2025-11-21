@@ -16,9 +16,7 @@ const RacketList: FC<RacketListProps> = ({ rackets, className }) => {
       {rackets.map((racket) => (
         <RacketListItem
           key={racket.id}
-          id={racket.id}
-          name={racket.name}
-          imageUrl={racket.imageUrl}
+          racket={racket}
         />
       ))}
     </ul>

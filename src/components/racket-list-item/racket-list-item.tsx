@@ -1,17 +1,30 @@
-import { FC } from "react";
+"use client";
+
+import { FC, use } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import FavoriteButton from "../favorite-button/favorite-button";
+import { UserContext } from "@/providers/user-provider";
+import RacketType from "@/types/racket-type";
 import styles from "./racket-list-item.module.css";
 
 type RacketListItemProps = {
-  id: number;
-  name: string;
-  imageUrl: string;
+  racket: RacketType;
 }
 
-const RacketListItem: FC<RacketListItemProps> = ({ id, name, imageUrl }) => {
+const RacketListItem: FC<RacketListItemProps> = ({ racket }: RacketListItemProps) => {
+
+  const { isAuthorized } = use(UserContext);
+
+  const { id, imageUrl, name, userData } = racket;
+
   return (
     <li className={styles.item}>
+      {
+        userData?.isFavorite
+        &&
+        <span className={styles.favorite}></span>
+      }
       <Link className={styles.link} href={`/racket/${id}`}>
         <Image
           className={styles.img}
@@ -21,7 +34,13 @@ const RacketListItem: FC<RacketListItemProps> = ({ id, name, imageUrl }) => {
           height={440}
         />
         <h3 className={styles.title}>{name}</h3>
+
       </Link>
+      {
+        isAuthorized
+        &&
+        <FavoriteButton productId={id} isFavorite={Boolean(userData?.isFavorite)} />
+      }
     </li>
   );
 }

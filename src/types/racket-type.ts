@@ -1,6 +1,6 @@
-type BrandType ={
- id: number;
- name: string;
+type BrandType = {
+  id: number;
+  name: string;
 }
 
 type RacketType = {
@@ -13,8 +13,11 @@ type RacketType = {
   year: number;
   top10: boolean;
   description: string;
-  brandId:  number;
+  brandId: number;
   brand: BrandType;
+  userData?: {
+    isFavorite?: boolean;
+  }
 }
 
 export default RacketType;

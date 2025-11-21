@@ -19,11 +19,7 @@ const RacketContainer: FC<RacketContainerProps> = async ({ id }) => {
     return notFound();
   }
   return (
-    <RacketCard name={racketActive.name}
-      brandName={racketActive.brand.name}
-      imageUrl={racketActive.imageUrl}
-      price={racketActive.price}
-      description={racketActive.description} />
+    <RacketCard racket={racketActive} />
   );
 }
 
